@@ -1,10 +1,12 @@
 import { View, Text } from 'react-native'
+import { Tabs } from 'expo-router'
 
 export default function TabsLayout() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Mexer depois, so para não dar erro</Text>
-      
-    </View>
+    <Tabs screenOptions={{
+      headerShown: false,
+    }}>
+      <Tabs.Screen/>
+    </Tabs>
   )
 }

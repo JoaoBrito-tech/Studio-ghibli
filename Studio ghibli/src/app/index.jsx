@@ -1,10 +1,24 @@
 import { Text, StyleSheet, Pressable, Image, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { router } from 'expo-router'
-import { Cores } from '../constants/Cores'
-import { Fontes } from '../constants/Fontes'
+import { Cores } from '@/constants/Cores'
+import { Fontes } from '@/constants/Fontes'
 
 export default function Index() {
+
+    const salgados = () => {
+        router.push('/salgados')
+    }
+    const doces = () => {
+        router.push('/doces')
+    }
+    const bebidas = () => {
+        router.push('/bebidas')
+    }
+    const sobre = () => {
+        router.push('/(tabs)/sobre')
+    }
+
     return (
         <SafeAreaView style={estilos.conteiner}>
             <View style={estilos.tamanhoImagem}>
@@ -20,17 +34,13 @@ export default function Index() {
                     <Text style={estilos.subtitulo}>Aproveite nosso restaurante dos animes!</Text>
                 </View>
 
-                <Pressable
-                    style={estilos.botaoEntrar}
-                    android_ripple={{ color: Cores.pClara }}
-                >
-                    <Text style={estilos.textoEntrar}>Entrar na Conta</Text>
-                </Pressable>
+                
 
                 <View style={estilos.menu}>
                     <Pressable
                         style={estilos.botao}
                         android_ripple={{ color: Cores.pClara }}
+                        onPress={bebidas}
                     >
                         <Text style={estilos.texto}>Bebidas</Text>
                     </Pressable>
@@ -38,6 +48,7 @@ export default function Index() {
                     <Pressable
                         style={estilos.botao}
                         android_ripple={{ color: Cores.pClara }}
+                        onPress={doces}
                     >
                         <Text style={estilos.texto}>Doces</Text>
                     </Pressable>
@@ -45,14 +56,24 @@ export default function Index() {
                     <Pressable
                         style={estilos.botao}
                         android_ripple={{ color: Cores.pClara }}
+                        onPress={salgados}
                     >
                         <Text style={estilos.texto}>Salgados</Text>
                     </Pressable>
+
+                    <Pressable
+                    style={estilos.botaoEntrar}
+                    android_ripple={{ color: Cores.pClara }}
+                    onPress={sobre}
+                >
+                    <Text style={estilos.textoEntrar}>Sobre</Text>
+                </Pressable>
                 </View>
             </View>
         </SafeAreaView>
     )
 }
+
 const estilos = StyleSheet.create({
     conteiner: {
         flex: 1,

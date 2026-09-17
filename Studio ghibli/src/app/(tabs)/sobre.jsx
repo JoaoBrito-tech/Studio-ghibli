@@ -1,9 +1,12 @@
-import { View, Text } from 'react-native'
+import { View, Text } from 'react-native';
+import {Cabecalho} from '@/components/Cabecalho';
 
 export default function sobre() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Mexer depois, so para não dar erro</Text>
+    <View>
+      <Cabecalho titulo={'SOBRE'}/>
+      
+      <Text>Sobressssssssssssssssssssssssssssssssssssssssssssssssss</Text>
       
     </View>
   )
