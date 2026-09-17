@@ -30,21 +30,28 @@ export default function Index() {
 
             <View style={estilos.painelAcoes}>
                 <View style={estilos.headerTexto}>
-                    <Text style={estilos.titulo}>Studio Ghibli</Text>
-                    <Text style={estilos.subtitulo}>Aproveite nosso restaurante dos animes!</Text>
+
+                    <Image
+                        style={estilos.logo}
+                        source={require('@/assets/images/layout/logo.png')}
+                    />
+
+                    <Text style={estilos.subtitulo}>
+                        Aproveite nosso restaurante dos animes!
+                    </Text>
                 </View>
 
-                
+
 
                 <View style={estilos.menu}>
-                    <Pressable
+                      <Pressable
                         style={estilos.botao}
                         android_ripple={{ color: Cores.pClara }}
-                        onPress={bebidas}
+                        onPress={salgados}
                     >
-                        <Text style={estilos.texto}>Bebidas</Text>
+                        <Text style={estilos.texto}>Salgados</Text>
                     </Pressable>
-
+                    
                     <Pressable
                         style={estilos.botao}
                         android_ripple={{ color: Cores.pClara }}
@@ -56,18 +63,18 @@ export default function Index() {
                     <Pressable
                         style={estilos.botao}
                         android_ripple={{ color: Cores.pClara }}
-                        onPress={salgados}
+                        onPress={bebidas}
                     >
-                        <Text style={estilos.texto}>Salgados</Text>
+                        <Text style={estilos.texto}>Bebidas</Text>
                     </Pressable>
 
                     <Pressable
-                    style={estilos.botaoEntrar}
-                    android_ripple={{ color: Cores.pClara }}
-                    onPress={sobre}
-                >
-                    <Text style={estilos.textoEntrar}>Sobre</Text>
-                </Pressable>
+                        style={estilos.botaoEntrar}
+                        android_ripple={{ color: Cores.pClara }}
+                        onPress={sobre}
+                    >
+                        <Text style={estilos.textoEntrar}>Sobre</Text>
+                    </Pressable>
                 </View>
             </View>
         </SafeAreaView>
@@ -95,21 +102,24 @@ const estilos = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-evenly', // Mantém de forma igual o espaçamento entre os elementos - botão, titulo, subtitulo e etc. (ótima descoberta)
         alignItems: 'center',
-        paddingTop: 8,
+        paddingTop: 0,
     },
     headerTexto: {
         alignItems: 'center',
+        width: '100%',
+        marginBottom: 20,
     },
-    titulo: {
-        fontFamily: Fontes.logo,
-        fontSize: Fontes.extraGrande,
-        color: Cores.pEscura,
+    logo: {
+        width: 450,
+        height: 190,
+        resizeMode: 'contain',
     },
     subtitulo: {
         fontFamily: Fontes.baseRegular,
         fontSize: Fontes.medio2,
         color: Cores.s,
-        marginTop: -10,
+        marginTop: -5,
+        textAlign: 'center',
     },
     botaoEntrar: {
         height: 48,
