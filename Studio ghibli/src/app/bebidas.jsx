@@ -4,93 +4,89 @@ import { Cabecalho } from '@/components/Cabecalho'
 import { Cores } from '@/constants/Cores'
 import { Fontes } from '@/constants/Fontes'
 
-
 export default function bebidas() {
-
   return (
     <SafeAreaView style={estilos.conteiner}>
 
       <Cabecalho titulo={'BEBIDAS'} />
 
-      <View
-        style={estilos.conteudo}
-      >
+      <ScrollView style={estilos.conteudo}>
 
         <View style={estilos.card}>
-          <Image
-            style={estilos.imagem}
-            source={require('@/assets/images/layout/image(8).png')}
-          />
+          <View style={estilos.containerImagem}>
+            <Image
+              style={estilos.imagem}
+              source={require('@/assets/images/layout/image(8).png')}
+            />
+            <Text style={estilos.preco}>R$ 14,90</Text>
+          </View>
 
           <View style={estilos.texto}>
-            <Text style={estilos.titulo}>
-             Matcha na Xícara
-            </Text>
-
+            <Text style={estilos.titulo}>Matcha na Xícara</Text>
             <Text style={estilos.descricao}>
-             Chá verde artesanal morno, servido em louça delicada para proporcionar um momento de relaxamento e conforto.
+              Chá verde artesanal morno, servido em louça delicada para proporcionar um momento de relaxamento e conforto.
             </Text>
           </View>
         </View>
 
         <View style={estilos.card}>
           <View style={estilos.texto}>
-            <Text style={estilos.titulo}>
-             Garrafas de Bebidas Tradicionais / Saquê
-            </Text>
-
+            <Text style={estilos.titulo}>Garrafas de Bebidas Tradicionais / Saquê</Text>
             <Text style={estilos.descricao}>
-            Seleção de bebidas tradicionais engarrafadas, perfeitas para acompanhar pratos especiais.
+              Seleção de bebidas tradicionais engarrafadas, perfeitas para acompanhar pratos especiais.
             </Text>
           </View>
 
-          <Image
-            style={estilos.imagem}
-            source={require('@/assets/images/layout/image(9).png')}
-          />
-        </View>
-
-        <View style={estilos.card}>
-          <Image
-            style={estilos.imagem}
-            source={require('@/assets/images/layout/image(10).png')}
-          />
-
-          <View style={estilos.texto}>
-            <Text style={estilos.titulo}>
-              Infusão de Frutas
-            </Text>
-
-            <Text style={estilos.descricao}>
-             Chá leve e aromático servido com fatias frescas de limão e acompanhado de biscoitos finos.
-            </Text>
+          <View style={estilos.containerImagem}>
+            <Image
+              style={estilos.imagem}
+              source={require('@/assets/images/layout/image(9).png')}
+            />
+            <Text style={estilos.preco}>R$ 28,00</Text>
           </View>
         </View>
 
         <View style={estilos.card}>
-          <View style={estilos.texto}>
-            <Text style={estilos.titulo}>
-              Torta de Peixe e Abóbora
-            </Text>
+          <View style={estilos.containerImagem}>
+            <Image
+              style={estilos.imagem}
+              source={require('@/assets/images/layout/image(10).png')}
+            />
+            <Text style={estilos.preco}>R$ 16,50</Text>
+          </View>
 
+          <View style={estilos.texto}>
+            <Text style={estilos.titulo}>Infusão de Frutas</Text>
+            <Text style={estilos.descricao}>
+              Chá leve e aromático servido com fatias frescas de limão e acompanhado de biscoitos finos.
+            </Text>
+          </View>
+        </View>
+
+        <View style={estilos.card}>
+          <View style={estilos.texto}>
+            <Text style={estilos.titulo}>Torta de Peixe e Abóbora</Text>
             <Text style={estilos.descricao}>
               Torta assada recheada com abóbora bem temperada e peixe, coberta por uma crosta dourada e decorada no topo.
             </Text>
           </View>
 
-          <Image
-            style={estilos.imagem}
-            source={require('@/assets/images/layout/image(18).png')}
-          />
+          <View style={estilos.containerImagem}>
+            <Image
+              style={estilos.imagem}
+              source={require('@/assets/images/layout/image(18).png')}
+            />
+            <Text style={estilos.preco}>R$ 32,90</Text>
+          </View>
         </View>
-      </View>
+
+      </ScrollView>
 
     </SafeAreaView>
   )
 }
 
 const estilos = StyleSheet.create({
-
   conteiner: {
     flex: 1,
     backgroundColor: Cores.p,
@@ -112,15 +108,26 @@ const estilos = StyleSheet.create({
     gap: 15,
   },
 
+  containerImagem: {
+    alignItems: 'center',
+  },
+
   imagem: {
     width: 130,
     height: 130,
     borderRadius: 16,
   },
 
+  preco: {
+    fontFamily: Fontes.baseBold,
+    fontSize: Fontes.medio1,
+    color: Cores.pEscura,
+    marginTop: 6,
+  },
+
   texto: {
     flex: 1,
-    justifyContent: 'center',
+    justify: 'center',
   },
 
   titulo: {
@@ -135,5 +142,4 @@ const estilos = StyleSheet.create({
     fontSize: Fontes.medio1,
     color: Cores.s,
   },
-
 })

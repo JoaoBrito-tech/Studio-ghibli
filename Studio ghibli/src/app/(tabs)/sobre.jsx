@@ -10,23 +10,19 @@ export default function sobre() {
 
       <Cabecalho titulo={'SOBRE'} />
 
-      {/* 
-        Substituí a <View> principal pelo <ScrollView> para a tela rolar. (ótima descoberta)
-      */}
-      <ScrollView style={estilos.conteudo}>
+      <ScrollView contentContainerStyle={estilos.conteudo}> {/* contentContainerStyle para aplicar o padding e gap a toda tela que rola, para não bugar e ficar tudo muito proximo*/}
 
-        <View style={estilos.card}>
+        {/* 1. Imagem em cima e texto embaixo */}
+        <View style={[estilos.card, estilos.cardCimaBaixo]}>
           <Image
-            style={estilos.imagem}
+            style={estilos.imagemGrande}
             source={require('@/assets/images/layout/image(11).png')}
           />
-
-          <View style={estilos.texto}>
-            <Text style={estilos.titulo}>
+          <View style={estilos.textoCentro}>
+            <Text style={estilos.tituloCentro}>
               A Fundação e o Legado
             </Text>
-
-            <Text style={estilos.descricao}>
+            <Text style={estilos.descricaoCentro}>
               Fundado em 1985 pelos diretores Hayao Miyazaki e Isao Takahata,
               ao lado do produtor Toshio Suzuki, o estúdio revolucionou a animação
               japonesa ao focar em narrativas humanas, poéticas e repletas de sensibilidade.
@@ -34,98 +30,93 @@ export default function sobre() {
           </View>
         </View>
 
+        {/* 2. Imagem na esquerda e texto Direita */}
         <View style={estilos.card}>
+          <Image
+            style={estilos.imagemPequena}
+            source={require('@/assets/images/layout/image(13).png')}
+          />
           <View style={estilos.texto}>
             <Text style={estilos.titulo}>
               Temas e Filosofia
             </Text>
-
             <Text style={estilos.descricao}>
-             As produções do estúdio abordam com frequência o respeito à natureza,
-             o pacifismo, o amadurecimento pessoal e o protagonismo feminino, 
-             trazendo reflexões profundas sobre o mundo e as relações humanas.
+              As produções do estúdio abordam com frequência o respeito à natureza,
+              o pacifismo, o amadurecimento pessoal e o protagonismo feminino,
+              trazendo reflexões profundas sobre o mundo e as relações humanas.
             </Text>
           </View>
-
-          <Image
-            style={estilos.imagem}
-            source={require('@/assets/images/layout/image(13).png')}
-          />
         </View>
 
-        <View style={estilos.card}>
+        {/* 3. Imagem em cima e texto embaixo */}
+        <View style={[estilos.card, estilos.cardCimaBaixo]}>
           <Image
-            style={estilos.imagem}
+            style={estilos.imagemGrande}
             source={require('@/assets/images/layout/image(14).png')}
           />
-
-          <View style={estilos.texto}>
-            <Text style={estilos.titulo}>
+          <View style={estilos.textoCentro}>
+            <Text style={estilos.tituloCentro}>
               A Magia do Cotidiano e do Fantástico
             </Text>
-
-            <Text style={estilos.descricao}>
-             Com uma capacidade única de transformar momentos simples do dia a dia
-             em pura poesia visual, o Ghibli mistura o folclore tradicional com mundos 
-             fantásticos e trilhas sonoras marcantes.
+            <Text style={estilos.descricaoCentro}>
+              Com uma capacidade única de transformar momentos simples do dia a dia
+              em pura poesia visual, o Ghibli mistura o folclore tradicional com mundos
+              fantásticos e trilhas sonoras marcantes.
             </Text>
           </View>
         </View>
 
+        {/* 4. Texto na esquerda e imagem na direita) */}
         <View style={estilos.card}>
           <View style={estilos.texto}>
             <Text style={estilos.titulo}>
-             Reconhecimento Mundial
+              Reconhecimento Mundial
             </Text>
-
             <Text style={estilos.descricao}>
-             Suas obras conquistaram o cinema global, arrecadando prêmios prestigiados como 
-             o Oscar de Melhor Filme de Animação por A Viagem de Chihiro e consolidando
-             o estúdio como uma referência cultural eterna.
+              Suas obras conquistaram o cinema global, arrecadando prêmios prestigiados como
+              o Oscar de Melhor Filme de Animação por A Viagem de Chihiro e consolidando
+              o estúdio como uma referência cultural eterna.
             </Text>
           </View>
-
           <Image
-            style={estilos.imagem}
+            style={estilos.imagemPequena}
             source={require('@/assets/images/layout/image(15).png')}
           />
         </View>
 
+        {/* 5. Imagem na esquerda e texto na direita) */}
         <View style={estilos.card}>
           <Image
-            style={estilos.imagem}
+            style={estilos.imagemPequena}
             source={require('@/assets/images/layout/image(16).png')}
           />
-
           <View style={estilos.texto}>
             <Text style={estilos.titulo}>
               A Arte da Animação Tradicional
             </Text>
-
             <Text style={estilos.descricao}>
-             Mesmo com o avanço das tecnologias digitais, o estúdio se destaca pelo compromisso
-             em manter a animação feita à mão, garantindo uma riqueza de detalhes artesanais e
-             uma expressividade única em cada quadro.
+              Mesmo com o avanço das tecnologias digitais, o estúdio se destaca pelo compromisso
+              em manter a animação feita à mão, garantindo uma riqueza de detalhes artesanais e
+              uma expressividade única em cada quadro.
             </Text>
           </View>
         </View>
 
-        <View style={estilos.card}>
-          <View style={estilos.texto}>
-            <Text style={estilos.titulo}>
-             Impacto Cultural e Atemporalidade
-            </Text>
-
-            <Text style={estilos.descricao}>
-             O alcance do estúdio vai muito além das telas de cinema, influenciando artistas globais,
-            inspirando parques temáticos e criando um acervo de obras atemporais que continuam a emocionar novas gerações.
-            </Text>
-          </View>
-
+        {/* 6. Imagem em cima e texto embaixo */}
+        <View style={[estilos.card, estilos.cardCimaBaixo]}>
           <Image
-            style={estilos.imagem}
+            style={estilos.imagemGrande}
             source={require('@/assets/images/layout/image(17).png')}
           />
+          <View style={estilos.textoCentro}>
+            <Text style={estilos.tituloCentro}>
+              Impacto Cultural e Atemporalidade
+            </Text>
+            <Text style={estilos.descricaoCentro}>
+              O alcance do estúdio vai muito além das telas de cinema, influenciando artistas globais,
+              inspirando parques temáticos e criando um acervo de obras atemporais que continuam a emocionar novas gerações.
+            </Text>
+          </View>
         </View>
 
       </ScrollView>
@@ -135,7 +126,6 @@ export default function sobre() {
 }
 
 const estilos = StyleSheet.create({
-
   conteiner: {
     flex: 1,
     backgroundColor: Cores.p,
@@ -143,36 +133,57 @@ const estilos = StyleSheet.create({
 
   conteudo: {
     padding: 20,
-    gap: 18,
+    gap: 25,
   },
 
   card: {
     width: '100%',
-    minHeight: 170,
-    backgroundColor: Cores.p,
-    borderRadius: 20,
-    padding: 15,
     flexDirection: 'row',
     alignItems: 'center',
     gap: 15,
   },
 
-  imagem: {
+  /* Para a imagem ficar em cima e o texto embaixo */
+  cardCimaBaixo: {
+    flexDirection: 'column',
+  },
+
+  /* Imagem para lado a lado */
+  imagemPequena: {
     width: 130,
     height: 130,
     borderRadius: 16,
   },
 
+  /* Imagem de fora a fora na horizontal */
+  imagemGrande: {
+    width: '100%',
+    height: 150,
+    borderRadius: 8,
+  },
+
   texto: {
     flex: 1,
-    justifyContent: 'center',
+  },
+
+  textoCentro: {
+    width: '100%',
+    alignItems: 'center',
   },
 
   titulo: {
     fontFamily: Fontes.baseBold,
     fontSize: Fontes.medio2,
     color: Cores.pEscura,
-    marginBottom: 8,
+    marginBottom: 6,
+  },
+
+  tituloCentro: {
+    fontFamily: Fontes.baseBold,
+    fontSize: Fontes.medio2,
+    color: Cores.pEscura,
+    marginBottom: 6,
+    textAlign: 'center',
   },
 
   descricao: {
@@ -181,4 +192,10 @@ const estilos = StyleSheet.create({
     color: Cores.s,
   },
 
+  descricaoCentro: {
+    fontFamily: Fontes.baseRegular,
+    fontSize: Fontes.medio1,
+    color: Cores.s,
+    textAlign: 'center',
+  },
 })

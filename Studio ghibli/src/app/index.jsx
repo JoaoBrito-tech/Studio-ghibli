@@ -92,7 +92,7 @@ const estilos = StyleSheet.create({
         width: '100%',
         height: '38%',
         borderRadius: 24,
-        overflow: 'hidden', // Recorta a imagem para ficar no tamanho perfeito para o borderRadius (ótima descoberta)
+        overflow: 'hidden', // Recorta a imagem para ficar no tamanho perfeito para o borderRadius.
     },
     imagem: {
         width: '100%',
@@ -100,7 +100,7 @@ const estilos = StyleSheet.create({
     },
     painelAcoes: {
         flex: 1,
-        justifyContent: 'space-evenly', // Mantém de forma igual o espaçamento entre os elementos - botão, titulo, subtitulo e etc. (ótima descoberta)
+        justifyContent: 'space-evenly', // Mantém de forma igual o espaçamento entre os elementos - botão, titulo, subtitulo e etc. 
         alignItems: 'center',
         paddingTop: 0,
     },
