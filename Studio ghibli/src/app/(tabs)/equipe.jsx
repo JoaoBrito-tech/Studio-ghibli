@@ -20,7 +20,7 @@ export default function equipe() {
         <View style={estilos.card}>
           <Image
             style={estilos.imagem}
-            source={require('@/assets/images/layout/image(11).png')}
+            source={require('@/assets/images/layout/imagem enzo.jpeg')}
           />
           <View style={estilos.info}>
             <Text style={estilos.nome}>Enzo Basso Martins</Text>
@@ -31,7 +31,7 @@ export default function equipe() {
         <View style={estilos.card}>
           <Image
             style={estilos.imagem}
-            source={require('@/assets/images/layout/image(14).png')}
+            source={require('@/assets/images/layout/imagem mini.jpeg')}
           />
           <View style={estilos.info}>
             <Text style={estilos.nome}>João Paulo Brito da SIlva</Text>
@@ -90,7 +90,7 @@ const estilos = StyleSheet.create({
 
   imagem: {
     width: '100%',
-    height: 160,
+    height: 260,
     borderRadius: 12,
     resizeMode: 'cover',
   },
