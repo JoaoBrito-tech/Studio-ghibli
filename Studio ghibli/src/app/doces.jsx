@@ -1,9 +1,9 @@
-import { Text, StyleSheet, Image, View, ScrollView, Pressable } from 'react-native'
+import { Text, StyleSheet, Pressable, Image, ScrollView, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { router } from 'expo-router'
-import { Cabecalho } from '@/components/Cabecalho'
 import { Cores } from '@/constants/Cores'
 import { Fontes } from '@/constants/Fontes'
+import { Cabecalho } from '@/components/Cabecalho'
 
 export default function Doces() {
   return (
@@ -12,57 +12,29 @@ export default function Doces() {
       <ScrollView contentContainerStyle={estilos.conteudo}>
 
         <Pressable style={estilos.card} onPress={() => router.push('/creampuff-totoro')}>
-          <View style={estilos.containerImagem}>
-            <Image style={estilos.imagem} source={require('@/assets/images/layout/image(4).png')} />
+          <Image style={estilos.imagem} source={require('@/assets/images/layout/image(4).png')} />
+          <View style={estilos.fundoPreco}>
             <Text style={estilos.preco}>R$ 18,90</Text>
-          </View>
-
-          <View style={estilos.texto}>
-            <Text style={estilos.titulo}>Cream Puff de Totoro (Choux Cream)</Text>
-            <Text style={estilos.descricao}>
-              Sobremesa delicada em formato de Totoro, recheada com um creme leve, aveludado e finalizada com detalhes artesanais.
-            </Text>
           </View>
         </Pressable>
 
         <Pressable style={estilos.card} onPress={() => router.push('/bolo-kiki')}>
-          <View style={estilos.texto}>
-            <Text style={estilos.titulo}>Bolo de Chocolate da Kiki</Text>
-            <Text style={estilos.descricao}>
-              Bolo de chocolate fofinho coberto com uma camada lisa de ganache e decorado com o desenho da bruxinha Kiki.
-            </Text>
-          </View>
-
-          <View style={estilos.containerImagem}>
-            <Image style={estilos.imagem} source={require('@/assets/images/layout/image(5).png')} />
+          <Image style={estilos.imagem} source={require('@/assets/images/layout/image(5).png')} />
+          <View style={estilos.fundoPreco}>
             <Text style={estilos.preco}>R$ 22,00</Text>
           </View>
         </Pressable>
 
         <Pressable style={estilos.card} onPress={() => router.push('/siberia')}>
-          <View style={estilos.containerImagem}>
-            <Image style={estilos.imagem} source={require('@/assets/images/layout/image(6).png')} />
+          <Image style={estilos.imagem} source={require('@/assets/images/layout/image(6).png')} />
+          <View style={estilos.fundoPreco}>
             <Text style={estilos.preco}>R$ 15,50</Text>
-          </View>
-
-          <View style={estilos.texto}>
-            <Text style={estilos.titulo}>Siberia (Bolo recheado com Yokan)</Text>
-            <Text style={estilos.descricao}>
-              Doce tradicional japonês composto por fatias de pão de ló macio recheadas com uma camada firme de pasta de feijão azuki (yokan).
-            </Text>
           </View>
         </Pressable>
 
         <Pressable style={estilos.card} onPress={() => router.push('/torta-peixe-abobora')}>
-          <View style={estilos.texto}>
-            <Text style={estilos.titulo}>Torta de Peixe e Abóbora</Text>
-            <Text style={estilos.descricao}>
-              Torta assada recheada com abóbora bem temperada e peixe, coberta por uma crosta dourada e decorada no topo.
-            </Text>
-          </View>
-
-          <View style={estilos.containerImagem}>
-            <Image style={estilos.imagem} source={require('@/assets/images/layout/image(7).png')} />
+          <Image style={estilos.imagem} source={require('@/assets/images/layout/image(7).png')} />
+          <View style={estilos.fundoPreco}>
             <Text style={estilos.preco}>R$ 32,90</Text>
           </View>
         </Pressable>
@@ -73,36 +45,39 @@ export default function Doces() {
 }
 
 const estilos = StyleSheet.create({
-  conteiner: { flex: 1, backgroundColor: Cores.p },
-  conteudo: { padding: 20, gap: 18 },
+  conteiner: {
+    flex: 1,
+    backgroundColor: Cores.p,
+  },
+  conteudo: {
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    gap: 20,
+  },
   card: {
     width: '100%',
-    minHeight: 170,
-    backgroundColor: Cores.p,
-    borderRadius: 20,
-    padding: 15,
-    flexDirection: 'row',
     alignItems: 'center',
-    gap: 15,
+    backgroundColor: Cores.pClara,
+    borderRadius: 20,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: Cores.sPreto,
   },
-  containerImagem: { alignItems: 'center' },
-  imagem: { width: 130, height: 130, borderRadius: 16 },
+  imagem: {
+    width: '100%',
+    height: 180,
+    borderRadius: 14,
+  },
+  fundoPreco: {
+    backgroundColor: Cores.p,
+    paddingHorizontal: 20,
+    paddingVertical: 8,
+    borderRadius: 20,
+    marginTop: 10,
+  },
   preco: {
     fontFamily: Fontes.baseBold,
     fontSize: Fontes.medio1,
     color: Cores.pEscura,
-    marginTop: 6,
-  },
-  texto: { flex: 1, justifyContent: 'center' },
-  titulo: {
-    fontFamily: Fontes.baseBold,
-    fontSize: Fontes.medio2,
-    color: Cores.pEscura,
-    marginBottom: 8,
-  },
-  descricao: {
-    fontFamily: Fontes.baseRegular,
-    fontSize: Fontes.medio1,
-    color: Cores.s,
   },
 })

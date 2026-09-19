@@ -1,9 +1,9 @@
-import { Text, StyleSheet, Image, View, ScrollView, Pressable } from 'react-native'
+import { Text, StyleSheet, Pressable, Image, ScrollView, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { router } from 'expo-router'
-import { Cabecalho } from '@/components/Cabecalho'
 import { Cores } from '@/constants/Cores'
 import { Fontes } from '@/constants/Fontes'
+import { Cabecalho } from '@/components/Cabecalho'
 
 export default function Bebidas() {
   return (
@@ -12,57 +12,29 @@ export default function Bebidas() {
       <ScrollView contentContainerStyle={estilos.conteudo}>
 
         <Pressable style={estilos.card} onPress={() => router.push('/matcha')}>
-          <View style={estilos.containerImagem}>
-            <Image style={estilos.imagem} source={require('@/assets/images/layout/image(8).png')} />
+          <Image style={estilos.imagem} source={require('@/assets/images/layout/image(8).png')} />
+          <View style={estilos.fundoPreco}>
             <Text style={estilos.preco}>R$ 14,90</Text>
-          </View>
-
-          <View style={estilos.texto}>
-            <Text style={estilos.titulo}>Matcha na Xícara</Text>
-            <Text style={estilos.descricao}>
-              Chá verde artesanal morno, servido em louça delicada para proporcionar um momento de relaxamento e conforto.
-            </Text>
           </View>
         </Pressable>
 
         <Pressable style={estilos.card} onPress={() => router.push('/sake')}>
-          <View style={estilos.texto}>
-            <Text style={estilos.titulo}>Garrafas de Bebidas Tradicionais / Saquê</Text>
-            <Text style={estilos.descricao}>
-              Seleção de bebidas tradicionais engarrafadas, perfeitas para acompanhar pratos especiais.
-            </Text>
-          </View>
-
-          <View style={estilos.containerImagem}>
-            <Image style={estilos.imagem} source={require('@/assets/images/layout/image(9).png')} />
+          <Image style={estilos.imagem} source={require('@/assets/images/layout/image(9).png')} />
+          <View style={estilos.fundoPreco}>
             <Text style={estilos.preco}>R$ 28,00</Text>
           </View>
         </Pressable>
 
         <Pressable style={estilos.card} onPress={() => router.push('/infusao-frutas')}>
-          <View style={estilos.containerImagem}>
-            <Image style={estilos.imagem} source={require('@/assets/images/layout/image(10).png')} />
+          <Image style={estilos.imagem} source={require('@/assets/images/layout/image(10).png')} />
+          <View style={estilos.fundoPreco}>
             <Text style={estilos.preco}>R$ 16,50</Text>
-          </View>
-
-          <View style={estilos.texto}>
-            <Text style={estilos.titulo}>Infusão de Frutas</Text>
-            <Text style={estilos.descricao}>
-              Chá leve e aromático servido com fatias frescas de limão e acompanhado de biscoitos finos.
-            </Text>
           </View>
         </Pressable>
 
         <Pressable style={estilos.card} onPress={() => router.push('/bebida-torta')}>
-          <View style={estilos.texto}>
-            <Text style={estilos.titulo}>Torta de Peixe e Abóbora</Text>
-            <Text style={estilos.descricao}>
-              Torta assada recheada com abóbora bem temperada e peixe, coberta por uma crosta dourada e decorada no topo.
-            </Text>
-          </View>
-
-          <View style={estilos.containerImagem}>
-            <Image style={estilos.imagem} source={require('@/assets/images/layout/image(18).png')} />
+          <Image style={estilos.imagem} source={require('@/assets/images/layout/image(18).png')} />
+          <View style={estilos.fundoPreco}>
             <Text style={estilos.preco}>R$ 32,90</Text>
           </View>
         </Pressable>
@@ -73,36 +45,39 @@ export default function Bebidas() {
 }
 
 const estilos = StyleSheet.create({
-  conteiner: { flex: 1, backgroundColor: Cores.p },
-  conteudo: { padding: 20, gap: 18 },
+  conteiner: {
+    flex: 1,
+    backgroundColor: Cores.p,
+  },
+  conteudo: {
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    gap: 20,
+  },
   card: {
     width: '100%',
-    minHeight: 170,
-    backgroundColor: Cores.p,
-    borderRadius: 20,
-    padding: 15,
-    flexDirection: 'row',
     alignItems: 'center',
-    gap: 15,
+    backgroundColor: Cores.pClara,
+    borderRadius: 20,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: Cores.sPreto,
   },
-  containerImagem: { alignItems: 'center' },
-  imagem: { width: 130, height: 130, borderRadius: 16 },
+  imagem: {
+    width: '100%',
+    height: 180,
+    borderRadius: 14,
+  },
+  fundoPreco: {
+    backgroundColor: Cores.p,
+    paddingHorizontal: 20,
+    paddingVertical: 8,
+    borderRadius: 20,
+    marginTop: 10,
+  },
   preco: {
     fontFamily: Fontes.baseBold,
     fontSize: Fontes.medio1,
     color: Cores.pEscura,
-    marginTop: 6,
-  },
-  texto: { flex: 1, justifyContent: 'center' },
-  titulo: {
-    fontFamily: Fontes.baseBold,
-    fontSize: Fontes.medio2,
-    color: Cores.pEscura,
-    marginBottom: 8,
-  },
-  descricao: {
-    fontFamily: Fontes.baseRegular,
-    fontSize: Fontes.medio1,
-    color: Cores.s,
   },
 })

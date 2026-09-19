@@ -1,5 +1,5 @@
 export const Cores = {
-    pClara: '#E9C46A',
+    pClara: '#e9d39c',
     p: '#F5E8CF',
     pEscura: '#6B4632',
     s: '#7A8B5A',

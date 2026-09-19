@@ -4,13 +4,13 @@ import { Cabecalho } from '@/components/Cabecalho'
 import { Cores } from '@/constants/Cores'
 import { Fontes } from '@/constants/Fontes'
 
-export default function sobre() {
+export default function Sobre() {
   return (
     <SafeAreaView style={estilos.conteiner}>
 
       <Cabecalho titulo={'SOBRE'} />
 
-      <ScrollView contentContainerStyle={estilos.conteudo}> {/* contentContainerStyle para aplicar o padding e gap a toda tela que rola, para não bugar e ficar tudo muito proximo*/}
+      <ScrollView contentContainerStyle={estilos.conteudo}>
 
         {/* 1. Imagem em cima e texto embaixo */}
         <View style={[estilos.card, estilos.cardCimaBaixo]}>
@@ -66,7 +66,7 @@ export default function sobre() {
           </View>
         </View>
 
-        {/* 4. Texto na esquerda e imagem na direita) */}
+        {/* 4. Texto na esquerda e imagem na direita */}
         <View style={estilos.card}>
           <View style={estilos.texto}>
             <Text style={estilos.titulo}>
@@ -84,7 +84,7 @@ export default function sobre() {
           />
         </View>
 
-        {/* 5. Imagem na esquerda e texto na direita) */}
+        {/* 5. Imagem na esquerda e texto na direita */}
         <View style={estilos.card}>
           <Image
             style={estilos.imagemPequena}
@@ -143,19 +143,16 @@ const estilos = StyleSheet.create({
     gap: 15,
   },
 
-  /* Para a imagem ficar em cima e o texto embaixo */
   cardCimaBaixo: {
     flexDirection: 'column',
   },
 
-  /* Imagem para lado a lado */
   imagemPequena: {
     width: 130,
     height: 130,
     borderRadius: 16,
   },
 
-  /* Imagem de fora a fora na horizontal */
   imagemGrande: {
     width: '100%',
     height: 150,
